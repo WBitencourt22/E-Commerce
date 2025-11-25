@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <a href="index.html" class="home-link">
+                <span class="logo-text">MINHA LOJA</span>
+            </a>
+        </div>
+        <form class="search-bar" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="Pesquisar no site...">
+            <button type="submit">🔍</button>
+        </form>
+        <div class="header-icons">
+            <span class="material-symbols-outlined icon" onclick="window.location.href='index.html'">home</span>
+            <div class="cart-icon-container" onclick="openCart()">
+                <span class="material-symbols-outlined icon">shopping_cart_checkout</span>
+                <span id="cart-badge" class="cart-badge" style="display: none;">0</span>
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="banner-content">
+            <div class="banner-text">
+                <h1>🔥 Super Promoção de Verão!</h1>
+                <p>Aproveite descontos incríveis de até 50% em produtos selecionados. Ofertas válidas por tempo
+                    limitado!</p>
+                <a href="#produto-card" class="banner-btn">Ver Ofertas</a>
+            </div>
+            <div class="banner-image">
+                <div class="discount-badge">
+                    <div class="percentage">50%</div>
+                    <div class="off-text">OFF</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main id="produto-card">
+        <div class="loading">Carregando produtos...</div>
+    </main>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h2>Meu Carrinho</h2>
+                <button class="close-cart" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-footer" id="cart-footer" style="display: none;">
+                <div class="cart-total">
+                    <span class="cart-total-label">Total:</span>
+                    <span class="cart-total-value" id="cart-total">R$ 0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">Todos direitos reservados</footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

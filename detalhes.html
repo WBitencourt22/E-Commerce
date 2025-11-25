@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Detalhes do Produto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <a href="index.html" class="home-link">
+            <span class="logo-text">MINHA LOJA</span>
+            </a>
+        </div>
+        <form class="search-bar" onsubmit="event.preventDefault();">
+        <input type="text" placeholder="Pesquisar no site...">
+        <button type="submit">🔍</button>
+    </form>
+    <div class="header-icons">
+        <span class="material-symbols-outlined icon" onclick="window.location.href='index.html'">home</span>
+        <div class="cart-icon-container" onclick="openCart()">
+            <span class="material-symbols-outlined icon">shopping_cart_checkout</span>
+            <span id="cart-badge" class="cart-badge" style="display: none;">0</span>
+        </div>
+    </div>
+    </header> <div class="product-detail-container">
+        <p id="loading-message">Carregando detalhes do produto...</p>
+        
+        <div class="product-image-area">
+            <img id="product-detail-thumbnail" src="" alt="Imagem do Produto">
+        </div>
+        
+        <div class="product-info-area">
+            <h1 id="product-detail-title"></h1>
+            <p class="product-price" id="product-detail-price"></p>
+            
+            <h3>Descrição</h3>
+            <p class="product-description" id="product-detail-description"></p>
+            
+            <h3>Características Principais</h3>
+            <ul id="product-detail-specs"></ul>
+            
+            <button class="btn-comprar" style="width: 100%; max-width: 300px;">Adicionar ao Carrinho</button>
+            
+            <div class="rating-chart-container">
+                <h3>Gráfico de Qualidade (Ranking)</h3>
+                <canvas id="qualityChart"></canvas>
+            </div>
+        </div>
+    </div>
+ 
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h2>Meu Carrinho</h2>
+                <button class="close-cart" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-footer" id="cart-footer" style="display: none;">
+                <div class="cart-total">
+                    <span class="cart-total-label">Total:</span>
+                    <span class="cart-total-value" id="cart-total">R$ 0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">Todos direitos reservados</footer>
+    
+    <script src="detalhes.js"></script> 
+</body>
+</html>
